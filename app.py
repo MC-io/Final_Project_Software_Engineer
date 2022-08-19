@@ -10,10 +10,10 @@ from backend.blueprints.curso_del_estudiante_blueprint import curso_del_estudian
 from backend.blueprints.escuela_blueprint import escuela_blueprint
 
 from backend.models.login_model import LoginModel
-from backend.models.usuarios_model import UsuariosModel
+from backend.models.usuario import UsuariosModel
 from backend.models.curso_del_estudiante_model import CursoDelEstudianteModel
 
-app = Flask(__name__,template_folder='frontend2/templates',static_folder='frontend2/static')
+app = Flask(__name__,template_folder='frontend/templates',static_folder='frontend/static')
 app.secret_key= "hola"
 app.register_blueprint(login_blueprint)
 app.register_blueprint(usuarios_blueprint)
