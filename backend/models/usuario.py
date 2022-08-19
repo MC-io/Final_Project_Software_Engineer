@@ -6,7 +6,7 @@ class Nombre:
     def full(self):
         return "{} {}".format(self.nombre, self.apellido)
         
-class UsuariosModel:
+class UsuarioModel:
     def __init__(self, id, nombre, apellido, correo):
         self.id = id
         self.nombre_completo = Nombre(nombre,apellido)
@@ -14,4 +14,4 @@ class UsuariosModel:
 
 
 if __name__ == "__main__":    
-    usm = UsuariosModel()     
+    usm = UsuarioModel()     
