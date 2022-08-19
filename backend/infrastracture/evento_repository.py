@@ -1,9 +1,13 @@
 from backend.infrastracture.connection_pool import MySQLPool
 
+# Clase Repositorio para la lectura y manipulacion en la BD
 class EventoRepository:
+    
+    # Estableciendo conexion con la BD a traves de un atributo de pool
     def __init__(self):
         self.mysql_pool = MySQLPool()
 
+    # Obtener un evento por id
     def get(self, id):
         params = {'id': id}
         rv = self.mysql_pool.execute("select * from evento where evento.id = %(id)s", params)                
@@ -15,6 +19,7 @@ class EventoRepository:
             content = {}
         return data
 
+    # Obtener todos los eventos
     def get_all(self):
         rv = self.mysql_pool.execute("select * from assitente order by id")
         data = []
@@ -25,6 +30,7 @@ class EventoRepository:
             content = {}
         return data
 
+    # Crear evento con todos sus parametros
     def create(self, id, id_ponente, nombre, detalles, link):
         params = {
             'id' : id,
@@ -38,6 +44,7 @@ class EventoRepository:
         data = {'result : 1'}
         return data
         
+    # Borrar un evento por id
     def delete(self, id):
         params = {'id' : id}      
         query = "delete from evento where id = %(id)s"    
