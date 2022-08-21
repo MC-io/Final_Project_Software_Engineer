@@ -15,3 +15,6 @@ class UsuarioModel:
 
 if __name__ == "__main__":    
     usm = UsuarioModel()     
+
+
+

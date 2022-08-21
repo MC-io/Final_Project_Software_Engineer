@@ -14,3 +14,9 @@ class Evento:
 
     def link(self):
         return self.link
+    """
+    Mas por agregar
+
+    """
+
+

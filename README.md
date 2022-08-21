@@ -58,3 +58,32 @@ Al ser las lineas horizontales largas una mala practica se ha optado por hacer a
 ![alt text](Images/lineas.PNG "Title")
 
 Captura de pantalla del archivo backend/infrastructure/ponente.py
+
+# Principios SOLID
+
+## Single Resposibilty (S)
+Cada archivo y clase presenta solo una funcionalidad, no mezcladas con otras. Por ejemplo, los repositorios realizan las peticiones directas a la base de datos, los blueprints, retornan datos en formato json a la API, y las clases de modelos representan a las entidades.
+
+Diferencia entre Evento para su repositorio, modelo y blueprint
+
+![alt text](Images/single_responsibility.PNG)
+
+![alt text](Images/single_responsibility2.PNG)
+
+![alt text](Images/single_responsibility3.PNG)
+
+Capturas de pantalla de los archivos backend/models/evento.py, backend/infrastructure/evento_repository.py y backend/blueprints/evento_blueprint.py
+
+## Open / Closed (O)
+Al usar modelos como una representacion de las entidades en los archivos de backend, se pueden anadir funcionalidades sin tener que modificar la base de datos.
+
+![alt text](Images/openclosed.PNG)
+
+Captura de pantalla del archivo backend/models/evento
+
+## Dependency Inversion (D)
+Si se realiza un cambio a una subclass, la clase superior no debe verse afectada por tal cambio, como podemos ver en las clases del modelo de Usuarios y Name, Usuario depende de Name, pero los cambios que se hagan a Usuario, no debera afectar el comportamiento de Name.
+
+![alt text](Images/dependencyinversion.PNG "Dependency Inversion")
+
+Captura de pantalla del archivo backend/models/usuario.py
